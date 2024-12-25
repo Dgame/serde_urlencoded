@@ -128,6 +128,6 @@ fn value_type_error_msg() {
 fn key_type_error_msg() {
     use std::collections::HashMap;
 
-    let mut map = HashMap::from([(vec![1, 2, 3], "value")]);
+    let map = HashMap::from([(vec![1, 2, 3], "value")]);
     let _ = serde_urlencoded::to_string(map).unwrap();
 }

@@ -27,8 +27,8 @@ where
     }
 }
 
-impl<'input, 'target, Target> ser::Serializer
-    for PairSerializer<'input, 'target, Target>
+impl<'target, Target> ser::Serializer
+    for PairSerializer<'_, 'target, Target>
 where
     Target: 'target + UrlEncodedTarget,
 {
@@ -203,8 +203,8 @@ where
     }
 }
 
-impl<'input, 'target, Target> ser::SerializeTuple
-    for PairSerializer<'input, 'target, Target>
+impl<'target, Target> ser::SerializeTuple
+    for PairSerializer<'_, 'target, Target>
 where
     Target: 'target + UrlEncodedTarget,
 {
